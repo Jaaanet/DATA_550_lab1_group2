@@ -7568,7 +7568,7 @@ and make sure it runs and shows up in the exported HTML.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>YOUR REPO LINK GOES HERE</p>
+<p>Our Repository Link: <a href="https://github.com/Jaaanet/DATA_550_lab1_group2">https://github.com/Jaaanet/DATA_550_lab1_group2</a></p>
 </div>
 </div>
 </div>
@@ -7577,7 +7577,7 @@ and make sure it runs and shows up in the exported HTML.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [24]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Run this cell to ensure that altair plots show up in the exported HTML</span>
@@ -7617,36 +7617,9 @@ and make sure it runs and shows up in the exported HTML.</p>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>/var/folders/xx/66hxpzd96c57gs7rzmhbn7vw0000gn/T/ipykernel_27805/4134663842.py:13: AltairDeprecationWarning: 
-Deprecated since `altair=5.5.0`. Use altair.theme instead.
-Most cases require only the following change:
-
-    # Deprecated
-    alt.themes.enable('quartz')
-
-    # Updated
-    alt.theme.enable('quartz')
-
-If your code registers a theme, make the following change:
-
-    # Deprecated
-    def custom_theme():
-        return {'height': 400, 'width': 700}
-    alt.themes.register('theme_name', custom_theme)
-    alt.themes.enable('theme_name')
-
-    # Updated
-    @alt.theme.register('theme_name', enable=True)
-    def custom_theme():
-        return alt.theme.ThemeConfig(
-            {'height': 400, 'width': 700}
-        )
-
-See the updated User Guide for further details:
-    https://altair-viz.github.io/user_guide/api.html#theme
-    https://altair-viz.github.io/user_guide/customization.html#chart-themes
-  alt.themes.register('bigger_font', bigger_font)
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>The rpy2.ipython extension is already loaded. To reload it, use:
+  %reload_ext rpy2.ipython
 </pre>
 </div>
 </div>
@@ -7840,7 +7813,7 @@ we will return to this code later in the lab to customize it.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [25]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># YOUR PYTHON ANSWER GOES HERE</span>
@@ -7875,13 +7848,74 @@ we will return to this code later in the lab to customize it.</p>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>&lt;VegaLite 5 object&gt;
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<style>
+  #altair-viz-3bab9198823c40289da69a621e88a31c.vega-embed {
+    width: 100%;
+    display: flex;
+  }
 
-If you see this message, it means the renderer has not been properly enabled
-for the frontend that you are using. For more information, see
-https://altair-viz.github.io/user_guide/display_frontends.html#troubleshooting
-</pre>
+  #altair-viz-3bab9198823c40289da69a621e88a31c.vega-embed details,
+  #altair-viz-3bab9198823c40289da69a621e88a31c.vega-embed details summary {
+    position: relative;
+  }
+</style>
+<div id="altair-viz-3bab9198823c40289da69a621e88a31c"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-3bab9198823c40289da69a621e88a31c") {
+      outputDiv = document.getElementById("altair-viz-3bab9198823c40289da69a621e88a31c");
+    }
+
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm/vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm/vega-lite@5.20.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm/vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      let deps = ["vega-embed"];
+      require(deps, displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "5.20.1"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"$schema": "https://vega.github.io/schema/vega/v5.json", "data": [{"name": "source_0", "values": [{"children_per_woman": 7.45, "life_expectancy": 40.1, "population": 9350000, "region": "Asia"}, {"children_per_woman": 6.28, "life_expectancy": 64.6, "population": 1740000, "region": "Europe"}, {"children_per_woman": 7.61, "life_expectancy": 53.2, "population": 11700000, "region": "Africa"}, {"children_per_woman": 7.56, "life_expectancy": 43.6, "population": 5870000, "region": "Africa"}, {"children_per_woman": 4.34, "life_expectancy": 63.8, "population": 57100, "region": "Americas"}, {"children_per_woman": 3.09, "life_expectancy": 64.3, "population": 21300000, "region": "Americas"}, {"children_per_woman": 4.44, "life_expectancy": 62.7, "population": 2010000, "region": "Asia"}, {"children_per_woman": 3.41, "life_expectancy": 71.3, "population": 10700000, "region": "Oceania"}, {"children_per_woman": 2.8, "life_expectancy": 69.5, "population": 7160000, "region": "Europe"}, {"children_per_woman": 5.96, "life_expectancy": 58.5, "population": 4170000, "region": "Asia"}, {"children_per_woman": 4.45, "life_expectancy": 62.6, "population": 121000, "region": "Americas"}, {"children_per_woman": 7.17, "life_expectancy": 55.6, "population": 173000, "region": "Asia"}, {"children_per_woman": 6.79, "life_expectancy": 44.9, "population": 51000000, "region": "Asia"}, {"children_per_woman": 4.27, "life_expectancy": 65.6, "population": 233000, "region": "Americas"}, {"children_per_woman": 2.61, "life_expectancy": 70.0, "population": 8340000, "region": "Europe"}, {"children_per_woman": 2.63, "life_expectancy": 70.2, "population": 9280000, "region": "Europe"}, {"children_per_woman": 6.46, "life_expectancy": 61.9, "population": 97400, "region": "Americas"}, {"children_per_woman": 6.39, "life_expectancy": 42.2, "population": 2500000, "region": "Africa"}, {"children_per_woman": 6.67, "life_expectancy": 42.9, "population": 235000, "region": "Asia"}, {"children_per_woman": 6.65, "life_expectancy": 47.1, "population": 3840000, "region": "Americas"}, {"children_per_woman": 3.68, "life_expectancy": 61.9, "population": 3350000, "region": "Europe"}, {"children_per_woman": 6.65, "life_expectancy": 52.9, "population": 551000, "region": "Africa"}, {"children_per_woman": 6.14, "life_expectancy": 57.9, "population": 76600000, "region": "Americas"}, {"children_per_woman": 2.21, "life_expectancy": 69.3, "population": 8020000, "region": "Europe"}, {"children_per_woman": 6.34, "life_expectancy": 39.8, "population": 4960000, "region": "Africa"}, {"children_per_woman": 7.05, "life_expectancy": 42.7, "population": 2890000, "region": "Africa"}, {"children_per_woman": 6.96, "life_expectancy": 44.3, "population": 6030000, "region": "Asia"}, {"children_per_woman": 5.77, "life_expectancy": 47.2, "population": 5400000, "region": "Africa"}, {"children_per_woman": 3.7, "life_expectancy": 71.4, "population": 18700000, "region": "Americas"}, {"children_per_woman": 5.89, "life_expectancy": 42.5, "population": 1560000, "region": "Africa"}, {"children_per_woman": 6.29, "life_expectancy": 45.3, "population": 3120000, "region": "Africa"}, {"children_per_woman": 5.0, "life_expectancy": 59.0, "population": 8070000, "region": "Americas"}, {"children_per_woman": 5.97, "life_expectancy": 43.5, "population": 680000000, "region": "Asia"}, {"children_per_woman": 6.78, "life_expectancy": 62.2, "population": 17500000, "region": "Americas"}, {"children_per_woman": 6.9, "life_expectancy": 47.1, "population": 197000, "region": "Africa"}, {"children_per_woman": 6.03, "life_expectancy": 47.1, "population": 16000000, "region": "Africa"}, {"children_per_woman": 5.97, "life_expectancy": 46.0, "population": 1090000, "region": "Africa"}, {"children_per_woman": 6.32, "life_expectancy": 64.6, "population": 1430000, "region": "Americas"}, {"children_per_woman": 7.51, "life_expectancy": 44.1, "population": 3840000, "region": "Africa"}, {"children_per_woman": 2.27, "life_expectancy": 65.1, "population": 4250000, "region": "Europe"}, {"children_per_woman": 4.51, "life_expectancy": 67.0, "population": 7450000, "region": "Americas"}, {"children_per_woman": 3.42, "life_expectancy": 68.3, "population": 578000, "region": "Asia"}, {"children_per_woman": 2.2, "life_expectancy": 70.0, "population": 9690000, "region": "Europe"}, {"children_per_woman": 2.54, "life_expectancy": 72.3, "population": 4650000, "region": "Europe"}, {"children_per_woman": 6.53, "life_expectancy": 53.8, "population": 94200, "region": "Africa"}, {"children_per_woman": 7.4, "life_expectancy": 58.7, "population": 3520000, "region": "Americas"}, {"children_per_woman": 6.68, "life_expectancy": 59.0, "population": 4810000, "region": "Americas"}, {"children_per_woman": 6.67, "life_expectancy": 48.6, "population": 28500000, "region": "Africa"}, {"children_per_woman": 6.67, "life_expectancy": 54.7, "population": 2930000, "region": "Americas"}, {"children_per_woman": 5.67, "life_expectancy": 41.2, "population": 263000, "region": "Africa"}, {"children_per_woman": 6.84, "life_expectancy": 42.0, "population": 1470000, "region": "Africa"}, {"children_per_woman": 1.94, "life_expectancy": 69.7, "population": 1250000, "region": "Europe"}, {"children_per_woman": 6.88, "life_expectancy": 40.4, "population": 23200000, "region": "Africa"}, {"children_per_woman": 6.09, "life_expectancy": 60.8, "population": 422000, "region": "Oceania"}, {"children_per_woman": 2.66, "life_expectancy": 68.5, "population": 4500000, "region": "Europe"}, {"children_per_woman": 2.81, "life_expectancy": 70.8, "population": 47100000, "region": "Europe"}, {"children_per_woman": 4.97, "life_expectancy": 44.7, "population": 510000, "region": "Africa"}, {"children_per_woman": 5.67, "life_expectancy": 46.3, "population": 384000, "region": "Africa"}, {"children_per_woman": 2.94, "life_expectancy": 61.7, "population": 4150000, "region": "Asia"}, {"children_per_woman": 2.47, "life_expectancy": 69.9, "population": 74500000, "region": "Europe"}, {"children_per_woman": 6.83, "life_expectancy": 51.8, "population": 7090000, "region": "Africa"}, {"children_per_woman": 2.32, "life_expectancy": 71.2, "population": 8350000, "region": "Europe"}, {"children_per_woman": 6.44, "life_expectancy": 64.0, "population": 92400, "region": "Americas"}, {"children_per_woman": 6.82, "life_expectancy": 45.7, "population": 4460000, "region": "Americas"}, {"children_per_woman": 6.14, "life_expectancy": 42.8, "population": 3690000, "region": "Africa"}, {"children_per_woman": 5.94, "life_expectancy": 39.3, "population": 630000, "region": "Africa"}, {"children_per_woman": 6.23, "life_expectancy": 59.7, "population": 606000, "region": "Americas"}, {"children_per_woman": 6.3, "life_expectancy": 42.0, "population": 4020000, "region": "Americas"}, {"children_per_woman": 7.44, "life_expectancy": 51.6, "population": 2160000, "region": "Americas"}, {"children_per_woman": 1.88, "life_expectancy": 67.9, "population": 10100000, "region": "Europe"}, {"children_per_woman": 3.98, "life_expectancy": 73.8, "population": 183000, "region": "Europe"}, {"children_per_woman": 5.89, "life_expectancy": 43.0, "population": 468000000, "region": "Asia"}, {"children_per_woman": 5.65, "life_expectancy": 47.5, "population": 92600000, "region": "Asia"}, {"children_per_woman": 6.91, "life_expectancy": 50.0, "population": 23100000, "region": "Asia"}, {"children_per_woman": 6.51, "life_expectancy": 52.3, "population": 7670000, "region": "Asia"}, {"children_per_woman": 3.98, "life_expectancy": 70.2, "population": 2820000, "region": "Europe"}, {"children_per_woman": 3.83, "life_expectancy": 67.9, "population": 2260000, "region": "Asia"}, {"children_per_woman": 2.47, "life_expectancy": 69.1, "population": 50500000, "region": "Europe"}, {"children_per_woman": 5.63, "life_expectancy": 65.8, "population": 1680000, "region": "Americas"}, {"children_per_woman": 2.01, "life_expectancy": 68.9, "population": 95500000, "region": "Asia"}, {"children_per_woman": 7.9, "life_expectancy": 55.9, "population": 1010000, "region": "Asia"}, {"children_per_woman": 4.43, "life_expectancy": 60.4, "population": 10800000, "region": "Asia"}, {"children_per_woman": 8.04, "life_expectancy": 52.4, "population": 8630000, "region": "Africa"}, {"children_per_woman": 6.78, "life_expectancy": 50.8, "population": 43300, "region": "Oceania"}, {"children_per_woman": 7.31, "life_expectancy": 64.7, "population": 338000, "region": "Asia"}, {"children_per_woman": 5.53, "life_expectancy": 56.4, "population": 2320000, "region": "Asia"}, {"children_per_woman": 5.97, "life_expectancy": 40.2, "population": 2220000, "region": "Asia"}, {"children_per_woman": 1.88, "life_expectancy": 69.8, "population": 2190000, "region": "Europe"}, {"children_per_woman": 5.69, "life_expectancy": 64.3, "population": 1930000, "region": "Asia"}, {"children_per_woman": 5.82, "life_expectancy": 53.6, "population": 882000, "region": "Africa"}, {"children_per_woman": 6.45, "life_expectancy": 42.1, "population": 1170000, "region": "Africa"}, {"children_per_woman": 7.31, "life_expectancy": 53.4, "population": 1550000, "region": "Africa"}, {"children_per_woman": 2.45, "life_expectancy": 69.4, "population": 2850000, "region": "Europe"}, {"children_per_woman": 2.39, "life_expectancy": 69.1, "population": 321000, "region": "Europe"}, {"children_per_woman": 3.69, "life_expectancy": 62.9, "population": 1530000, "region": "Europe"}, {"children_per_woman": 7.3, "life_expectancy": 46.0, "population": 5350000, "region": "Africa"}, {"children_per_woman": 6.99, "life_expectancy": 40.8, "population": 3780000, "region": "Africa"}, {"children_per_woman": 6.35, "life_expectancy": 60.7, "population": 8690000, "region": "Asia"}, {"children_per_woman": 7.12, "life_expectancy": 33.4, "population": 94900, "region": "Asia"}, {"children_per_woman": 6.99, "life_expectancy": 34.5, "population": 5380000, "region": "Africa"}, {"children_per_woman": 3.2, "life_expectancy": 67.3, "population": 315000, "region": "Europe"}, {"children_per_woman": 6.79, "life_expectancy": 49.1, "population": 909000, "region": "Africa"}, {"children_per_woman": 6.12, "life_expectancy": 58.6, "population": 698000, "region": "Africa"}, {"children_per_woman": 6.76, "life_expectancy": 58.9, "population": 40600000, "region": "Americas"}, {"children_per_woman": 3.18, "life_expectancy": 60.5, "population": 3150000, "region": "Europe"}, {"children_per_woman": 7.35, "life_expectancy": 49.5, "population": 1010000, "region": "Asia"}, {"children_per_woman": 3.44, "life_expectancy": 67.5, "population": 510000, "region": "Europe"}, {"children_per_woman": 7.09, "life_expectancy": 51.7, "population": 13100000, "region": "Africa"}, {"children_per_woman": 6.92, "life_expectancy": 42.9, "population": 7700000, "region": "Africa"}, {"children_per_woman": 6.1, "life_expectancy": 42.1, "population": 21900000, "region": "Asia"}, {"children_per_woman": 6.18, "life_expectancy": 53.0, "population": 633000, "region": "Africa"}, {"children_per_woman": 5.96, "life_expectancy": 44.9, "population": 10400000, "region": "Asia"}, {"children_per_woman": 3.18, "life_expectancy": 73.3, "population": 11800000, "region": "Europe"}, {"children_per_woman": 3.51, "life_expectancy": 71.4, "population": 2480000, "region": "Oceania"}, {"children_per_woman": 7.18, "life_expectancy": 52.3, "population": 1890000, "region": "Americas"}, {"children_per_woman": 7.49, "life_expectancy": 42.3, "population": 3590000, "region": "Africa"}, {"children_per_woman": 6.35, "life_expectancy": 50.5, "population": 47000000, "region": "Africa"}, {"children_per_woman": 4.17, "life_expectancy": 58.3, "population": 11900000, "region": "Asia"}, {"children_per_woman": 2.89, "life_expectancy": 73.4, "population": 3640000, "region": "Europe"}, {"children_per_woman": 7.25, "life_expectancy": 44.6, "population": 579000, "region": "Asia"}, {"children_per_woman": 6.6, "life_expectancy": 51.1, "population": 47100000, "region": "Asia"}, {"children_per_woman": 7.91, "life_expectancy": 56.0, "population": 1130000, "region": "Asia"}, {"children_per_woman": 5.81, "life_expectancy": 64.3, "population": 1200000, "region": "Americas"}, {"children_per_woman": 6.28, "life_expectancy": 46.0, "population": 2090000, "region": "Oceania"}, {"children_per_woman": 6.47, "life_expectancy": 68.0, "population": 2010000, "region": "Americas"}, {"children_per_woman": 6.96, "life_expectancy": 43.8, "population": 10700000, "region": "Americas"}, {"children_per_woman": 7.02, "life_expectancy": 60.4, "population": 28100000, "region": "Asia"}, {"children_per_woman": 2.82, "life_expectancy": 67.6, "population": 30400000, "region": "Europe"}, {"children_per_woman": 3.19, "life_expectancy": 64.6, "population": 8940000, "region": "Europe"}, {"children_per_woman": 6.98, "life_expectancy": 61.8, "population": 56300, "region": "Asia"}, {"children_per_woman": 2.22, "life_expectancy": 67.3, "population": 18900000, "region": "Europe"}, {"children_per_woman": 2.34, "life_expectancy": 68.1, "population": 123000000, "region": "Europe"}, {"children_per_woman": 8.2, "life_expectancy": 44.8, "population": 3050000, "region": "Africa"}, {"children_per_woman": 7.63, "life_expectancy": 59.5, "population": 116000, "region": "Oceania"}, {"children_per_woman": 7.24, "life_expectancy": 56.3, "population": 4360000, "region": "Asia"}, {"children_per_woman": 7.08, "life_expectancy": 46.0, "population": 3390000, "region": "Africa"}, {"children_per_woman": 2.48, "life_expectancy": 66.0, "population": 7670000, "region": "Europe"}, {"children_per_woman": 5.53, "life_expectancy": 62.1, "population": 43400, "region": "Africa"}, {"children_per_woman": 6.22, "life_expectancy": 39.8, "population": 2360000, "region": "Africa"}, {"children_per_woman": 5.27, "life_expectancy": 66.8, "population": 1740000, "region": "Asia"}, {"children_per_woman": 2.94, "life_expectancy": 70.4, "population": 4250000, "region": "Europe"}, {"children_per_woman": 2.33, "life_expectancy": 67.8, "population": 1610000, "region": "Europe"}, {"children_per_woman": 6.38, "life_expectancy": 50.5, "population": 125000, "region": "Oceania"}, {"children_per_woman": 7.26, "life_expectancy": 45.3, "population": 2870000, "region": "Africa"}, {"children_per_woman": 6.08, "life_expectancy": 53.6, "population": 18400000, "region": "Africa"}, {"children_per_woman": 5.74, "life_expectancy": 55.1, "population": 26800000, "region": "Asia"}, {"children_per_woman": 6.74, "life_expectancy": 43.6, "population": 3070000, "region": "Africa"}, {"children_per_woman": 2.8, "life_expectancy": 69.4, "population": 31200000, "region": "Europe"}, {"children_per_woman": 5.3, "life_expectancy": 60.9, "population": 10400000, "region": "Asia"}, {"children_per_woman": 6.74, "life_expectancy": 49.3, "population": 8000000, "region": "Africa"}, {"children_per_woman": 6.56, "life_expectancy": 61.5, "population": 306000, "region": "Americas"}, {"children_per_woman": 6.75, "life_expectancy": 47.7, "population": 366000, "region": "Africa"}, {"children_per_woman": 2.26, "life_expectancy": 73.2, "population": 7580000, "region": "Europe"}, {"children_per_woman": 2.58, "life_expectancy": 71.2, "population": 5500000, "region": "Europe"}, {"children_per_woman": 7.52, "life_expectancy": 58.5, "population": 4880000, "region": "Asia"}, {"children_per_woman": 6.76, "life_expectancy": 53.6, "population": 2240000, "region": "Asia"}, {"children_per_woman": 6.8, "life_expectancy": 49.0, "population": 10700000, "region": "Africa"}, {"children_per_woman": 6.16, "life_expectancy": 58.7, "population": 29100000, "region": "Asia"}, {"children_per_woman": 6.38, "life_expectancy": 38.2, "population": 518000, "region": "Asia"}, {"children_per_woman": 6.62, "life_expectancy": 45.9, "population": 1610000, "region": "Africa"}, {"children_per_woman": 7.3, "life_expectancy": 62.7, "population": 66300, "region": "Oceania"}, {"children_per_woman": 5.05, "life_expectancy": 64.1, "population": 880000, "region": "Americas"}, {"children_per_woman": 6.99, "life_expectancy": 48.3, "population": 4300000, "region": "Africa"}, {"children_per_woman": 6.24, "life_expectancy": 50.8, "population": 28800000, "region": "Asia"}, {"children_per_woman": 6.76, "life_expectancy": 53.1, "population": 1720000, "region": "Asia"}, {"children_per_woman": 7.04, "life_expectancy": 46.4, "population": 7240000, "region": "Africa"}, {"children_per_woman": 2.21, "life_expectancy": 69.1, "population": 43700000, "region": "Europe"}, {"children_per_woman": 6.89, "life_expectancy": 57.2, "population": 112000, "region": "Asia"}, {"children_per_woman": 2.79, "life_expectancy": 70.8, "population": 53200000, "region": "Europe"}, {"children_per_woman": 3.48, "life_expectancy": 70.2, "population": 192000000, "region": "Americas"}, {"children_per_woman": 2.88, "life_expectancy": 68.2, "population": 2600000, "region": "Americas"}, {"children_per_woman": 6.44, "life_expectancy": 60.2, "population": 9140000, "region": "Asia"}, {"children_per_woman": 7.03, "life_expectancy": 51.5, "population": 67800, "region": "Oceania"}, {"children_per_woman": 6.63, "life_expectancy": 62.4, "population": 8790000, "region": "Americas"}, {"children_per_woman": 6.43, "life_expectancy": 55.0, "population": 34700000, "region": "Asia"}, {"children_per_woman": 7.58, "life_expectancy": 34.9, "population": 5350000, "region": "Asia"}, {"children_per_woman": 7.21, "life_expectancy": 51.5, "population": 3240000, "region": "Africa"}, {"children_per_woman": 7.27, "life_expectancy": 54.6, "population": 4000000, "region": "Africa"}]}, {"name": "source_0_x_domain_children_per_woman", "values": [{"min": 1.88, "max": 8.2}]}, {"name": "source_0_y_domain_life_expectancy", "values": [{"min": 33.4, "max": 73.8}]}, {"name": "source_0_color_domain_region", "values": [{"region": "Asia"}, {"region": "Europe"}, {"region": "Africa"}, {"region": "Americas"}, {"region": "Oceania"}]}, {"name": "source_0_size_domain_population", "values": [{"min": 43300, "max": 680000000}]}], "marks": [{"type": "symbol", "name": "marks", "from": {"data": "source_0"}, "encode": {"update": {"y": {"field": "life_expectancy", "scale": "y"}, "shape": {"value": "circle"}, "x": {"field": "children_per_woman", "scale": "x"}, "opacity": {"value": 0.7}, "fill": {"field": "region", "scale": "color"}, "size": {"field": "population", "scale": "size"}}}, "style": ["circle"]}], "scales": [{"name": "x", "type": "linear", "domain": [{"signal": "(data(\"source_0_x_domain_children_per_woman\")[0] || {}).min"}, {"signal": "(data(\"source_0_x_domain_children_per_woman\")[0] || {}).max"}], "range": [0, {"signal": "width"}], "nice": true, "zero": true}, {"name": "y", "type": "linear", "domain": [{"signal": "(data(\"source_0_y_domain_life_expectancy\")[0] || {}).min"}, {"signal": "(data(\"source_0_y_domain_life_expectancy\")[0] || {}).max"}], "range": [{"signal": "height"}, 0], "nice": true, "zero": true}, {"name": "color", "type": "ordinal", "domain": {"data": "source_0_color_domain_region", "field": "region", "sort": true}, "range": "category"}, {"name": "size", "type": "linear", "domain": [{"signal": "(data(\"source_0_size_domain_population\")[0] || {}).min"}, {"signal": "(data(\"source_0_size_domain_population\")[0] || {}).max"}], "range": [4, 361], "zero": true}], "axes": [{"scale": "x", "maxExtent": 0, "domain": false, "aria": false, "labels": false, "gridScale": "y", "tickCount": {"signal": "ceil(width/40)"}, "orient": "bottom", "grid": true, "minExtent": 0, "zindex": 0, "ticks": false}, {"scale": "y", "gridScale": "x", "grid": true, "labels": false, "maxExtent": 0, "zindex": 0, "ticks": false, "tickCount": {"signal": "ceil(height/40)"}, "minExtent": 0, "orient": "left", "aria": false, "domain": false}, {"scale": "x", "labelFlush": true, "labelOverlap": true, "grid": false, "orient": "bottom", "zindex": 0, "tickCount": {"signal": "ceil(width/40)"}, "title": "children_per_woman"}, {"scale": "y", "zindex": 0, "title": "life_expectancy", "orient": "left", "labelOverlap": true, "grid": false, "tickCount": {"signal": "ceil(height/40)"}}], "title": {"text": "Number of Children VS Life Expectancy", "frame": "group"}, "style": "cell", "config": {"encoding": {"x": {"scale": {"zero": false}}}, "axis": {"titleFontSize": 15, "labelFontSize": 12}, "legend": {"symbolSize": 14, "titleFontSize": 14, "labelFontSize": 14}}, "padding": 5, "background": "white", "legends": [{"fill": "color", "symbolType": "circle", "title": "region", "encode": {"symbols": {"update": {"opacity": {"value": 0.7}}}}}, {"size": "size", "symbolType": "circle", "title": "population", "encode": {"symbols": {"update": {"fill": {"value": "black"}, "fillOpacity": {"value": 0.7}, "opacity": {"value": 0.7}, "stroke": {"value": "transparent"}}}}}], "width": 400, "height": 300}, {"mode": "vega"});
+</script>
 </div>
 </div>
 </div>
@@ -7913,12 +7947,12 @@ we will return to this code later in the lab to customize it.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">R</span>
@@ -7932,34 +7966,12 @@ we will return to this code later in the lab to customize it.</p>
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.5
-✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ ggplot2   3.5.2     ✔ tibble    3.3.0
-✔ lubridate 1.9.4     ✔ tidyr     1.3.1
-✔ purrr     1.1.0     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors
-</pre>
-</div>
-</div>
-</div>
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [27]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">R</span><span class="w"> </span><span class="o">-</span><span class="n">i</span><span class="w"> </span><span class="n">gm_filtered</span><span class="w"> </span><span class="o">-</span><span class="n">w</span><span class="w"> </span><span class="m">500</span><span class="w"> </span><span class="o">-</span><span class="n">h</span><span class="w"> </span><span class="m">375</span>
@@ -8043,7 +8055,7 @@ Python
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [28]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># YOUR PYTHON ANSWER GOES HERE</span>
@@ -8093,14 +8105,75 @@ Python
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>&lt;VegaLite 5 object&gt;
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[28]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<style>
+  #altair-viz-c51cafa18cc34512ae392e132dac3483.vega-embed {
+    width: 100%;
+    display: flex;
+  }
 
-If you see this message, it means the renderer has not been properly enabled
-for the frontend that you are using. For more information, see
-https://altair-viz.github.io/user_guide/display_frontends.html#troubleshooting
-</pre>
+  #altair-viz-c51cafa18cc34512ae392e132dac3483.vega-embed details,
+  #altair-viz-c51cafa18cc34512ae392e132dac3483.vega-embed details summary {
+    position: relative;
+  }
+</style>
+<div id="altair-viz-c51cafa18cc34512ae392e132dac3483"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-c51cafa18cc34512ae392e132dac3483") {
+      outputDiv = document.getElementById("altair-viz-c51cafa18cc34512ae392e132dac3483");
+    }
+
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm/vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm/vega-lite@5.20.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm/vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      let deps = ["vega-embed"];
+      require(deps, displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "5.20.1"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"$schema": "https://vega.github.io/schema/vega/v5.json", "data": [{"name": "source_0", "values": [{"year": 1970, "income_group": "High", "mean_ratio": 0.9903846153846154}, {"year": 1970, "income_group": "Low", "mean_ratio": 0.5862068965517241}, {"year": 1970, "income_group": "Lower middle", "mean_ratio": 0.8333333333333334}, {"year": 1970, "income_group": "Upper middle", "mean_ratio": 0.9787234042553191}, {"year": 1971, "income_group": "High", "mean_ratio": 0.9903846153846154}, {"year": 1971, "income_group": "Low", "mean_ratio": 0.5862068965517241}, {"year": 1971, "income_group": "Lower middle", "mean_ratio": 0.8529411764705882}, {"year": 1971, "income_group": "Upper middle", "mean_ratio": 0.9891304347826086}, {"year": 1972, "income_group": "High", "mean_ratio": 0.9903846153846154}, {"year": 1972, "income_group": "Low", "mean_ratio": 0.5862068965517241}, {"year": 1972, "income_group": "Lower middle", "mean_ratio": 0.8529411764705882}, {"year": 1972, "income_group": "Upper middle", "mean_ratio": 0.9891304347826086}, {"year": 1973, "income_group": "High", "mean_ratio": 0.9903846153846154}, {"year": 1973, "income_group": "Low", "mean_ratio": 0.603448275862069}, {"year": 1973, "income_group": "Lower middle", "mean_ratio": 0.8676470588235294}, {"year": 1973, "income_group": "Upper middle", "mean_ratio": 0.9891304347826086}, {"year": 1974, "income_group": "High", "mean_ratio": 0.9903846153846154}, {"year": 1974, "income_group": "Low", "mean_ratio": 0.6071428571428571}, {"year": 1974, "income_group": "Lower middle", "mean_ratio": 0.8676470588235294}, {"year": 1974, "income_group": "Upper middle", "mean_ratio": 0.9891304347826086}, {"year": 1975, "income_group": "High", "mean_ratio": 0.9903846153846154}, {"year": 1975, "income_group": "Low", "mean_ratio": 0.6206896551724138}, {"year": 1975, "income_group": "Lower middle", "mean_ratio": 0.8676470588235294}, {"year": 1975, "income_group": "Upper middle", "mean_ratio": 1.0}, {"year": 1976, "income_group": "High", "mean_ratio": 0.9903846153846154}, {"year": 1976, "income_group": "Low", "mean_ratio": 0.6206896551724138}, {"year": 1976, "income_group": "Lower middle", "mean_ratio": 0.8787878787878788}, {"year": 1976, "income_group": "Upper middle", "mean_ratio": 1.0}, {"year": 1977, "income_group": "High", "mean_ratio": 0.9903846153846154}, {"year": 1977, "income_group": "Low", "mean_ratio": 0.6206896551724138}, {"year": 1977, "income_group": "Lower middle", "mean_ratio": 0.8787878787878788}, {"year": 1977, "income_group": "Upper middle", "mean_ratio": 1.0}, {"year": 1978, "income_group": "High", "mean_ratio": 0.9903846153846154}, {"year": 1978, "income_group": "Low", "mean_ratio": 0.6206896551724138}, {"year": 1978, "income_group": "Lower middle", "mean_ratio": 0.8970588235294118}, {"year": 1978, "income_group": "Upper middle", "mean_ratio": 1.0}, {"year": 1979, "income_group": "High", "mean_ratio": 0.9903846153846154}, {"year": 1979, "income_group": "Low", "mean_ratio": 0.6206896551724138}, {"year": 1979, "income_group": "Lower middle", "mean_ratio": 0.9}, {"year": 1979, "income_group": "Upper middle", "mean_ratio": 1.0}, {"year": 1980, "income_group": "High", "mean_ratio": 1.0}, {"year": 1980, "income_group": "Low", "mean_ratio": 0.6206896551724138}, {"year": 1980, "income_group": "Lower middle", "mean_ratio": 0.9}, {"year": 1980, "income_group": "Upper middle", "mean_ratio": 1.0}, {"year": 1981, "income_group": "High", "mean_ratio": 1.0}, {"year": 1981, "income_group": "Low", "mean_ratio": 0.6333333333333333}, {"year": 1981, "income_group": "Lower middle", "mean_ratio": 0.9}, {"year": 1981, "income_group": "Upper middle", "mean_ratio": 1.0}, {"year": 1982, "income_group": "High", "mean_ratio": 1.0}, {"year": 1982, "income_group": "Low", "mean_ratio": 0.65}, {"year": 1982, "income_group": "Lower middle", "mean_ratio": 0.9}, {"year": 1982, "income_group": "Upper middle", "mean_ratio": 1.0}, {"year": 1983, "income_group": "High", "mean_ratio": 1.0}, {"year": 1983, "income_group": "Low", "mean_ratio": 0.65}, {"year": 1983, "income_group": "Lower middle", "mean_ratio": 0.9}, {"year": 1983, "income_group": "Upper middle", "mean_ratio": 1.0}, {"year": 1984, "income_group": "High", "mean_ratio": 1.0}, {"year": 1984, "income_group": "Low", "mean_ratio": 0.65}, {"year": 1984, "income_group": "Lower middle", "mean_ratio": 0.9142857142857143}, {"year": 1984, "income_group": "Upper middle", "mean_ratio": 1.0}, {"year": 1985, "income_group": "High", "mean_ratio": 1.0}, {"year": 1985, "income_group": "Low", "mean_ratio": 0.65}, {"year": 1985, "income_group": "Lower middle", "mean_ratio": 0.9142857142857143}, {"year": 1985, "income_group": "Upper middle", "mean_ratio": 1.0}, {"year": 1986, "income_group": "High", "mean_ratio": 1.0}, {"year": 1986, "income_group": "Low", "mean_ratio": 0.6612903225806451}, {"year": 1986, "income_group": "Lower middle", "mean_ratio": 0.9142857142857143}, {"year": 1986, "income_group": "Upper middle", "mean_ratio": 1.0}, {"year": 1987, "income_group": "High", "mean_ratio": 1.0}, {"year": 1987, "income_group": "Low", "mean_ratio": 0.671875}, {"year": 1987, "income_group": "Lower middle", "mean_ratio": 0.9166666666666666}, {"year": 1987, "income_group": "Upper middle", "mean_ratio": 1.0}, {"year": 1988, "income_group": "High", "mean_ratio": 1.0}, {"year": 1988, "income_group": "Low", "mean_ratio": 0.671875}, {"year": 1988, "income_group": "Lower middle", "mean_ratio": 0.9285714285714286}, {"year": 1988, "income_group": "Upper middle", "mean_ratio": 1.0}, {"year": 1989, "income_group": "High", "mean_ratio": 1.0}, {"year": 1989, "income_group": "Low", "mean_ratio": 0.6833333333333333}, {"year": 1989, "income_group": "Lower middle", "mean_ratio": 0.9428571428571428}, {"year": 1989, "income_group": "Upper middle", "mean_ratio": 1.0}, {"year": 1990, "income_group": "High", "mean_ratio": 1.0}, {"year": 1990, "income_group": "Low", "mean_ratio": 0.6964285714285714}, {"year": 1990, "income_group": "Lower middle", "mean_ratio": 0.9444444444444444}, {"year": 1990, "income_group": "Upper middle", "mean_ratio": 1.0}, {"year": 1991, "income_group": "High", "mean_ratio": 1.0}, {"year": 1991, "income_group": "Low", "mean_ratio": 0.6964285714285714}, {"year": 1991, "income_group": "Lower middle", "mean_ratio": 0.9459459459459459}, {"year": 1991, "income_group": "Upper middle", "mean_ratio": 1.0}, {"year": 1992, "income_group": "High", "mean_ratio": 1.0}, {"year": 1992, "income_group": "Low", "mean_ratio": 0.6964285714285714}, {"year": 1992, "income_group": "Lower middle", "mean_ratio": 0.9487179487179487}, {"year": 1992, "income_group": "Upper middle", "mean_ratio": 1.0}, {"year": 1993, "income_group": "High", "mean_ratio": 1.0}, {"year": 1993, "income_group": "Low", "mean_ratio": 0.6964285714285714}, {"year": 1993, "income_group": "Lower middle", "mean_ratio": 0.9487179487179487}, {"year": 1993, "income_group": "Upper middle", "mean_ratio": 1.0}, {"year": 1994, "income_group": "High", "mean_ratio": 1.0}, {"year": 1994, "income_group": "Low", "mean_ratio": 0.6964285714285714}, {"year": 1994, "income_group": "Lower middle", "mean_ratio": 0.9487179487179487}, {"year": 1994, "income_group": "Upper middle", "mean_ratio": 1.0}, {"year": 1995, "income_group": "High", "mean_ratio": 1.0}, {"year": 1995, "income_group": "Low", "mean_ratio": 0.6964285714285714}, {"year": 1995, "income_group": "Lower middle", "mean_ratio": 0.9605263157894737}, {"year": 1995, "income_group": "Upper middle", "mean_ratio": 1.0}, {"year": 1996, "income_group": "High", "mean_ratio": 1.0}, {"year": 1996, "income_group": "Low", "mean_ratio": 0.6964285714285714}, {"year": 1996, "income_group": "Lower middle", "mean_ratio": 0.9625}, {"year": 1996, "income_group": "Upper middle", "mean_ratio": 1.0}, {"year": 1997, "income_group": "High", "mean_ratio": 1.0}, {"year": 1997, "income_group": "Low", "mean_ratio": 0.7222222222222222}, {"year": 1997, "income_group": "Lower middle", "mean_ratio": 0.9634146341463414}, {"year": 1997, "income_group": "Upper middle", "mean_ratio": 1.0}, {"year": 1998, "income_group": "High", "mean_ratio": 1.0}, {"year": 1998, "income_group": "Low", "mean_ratio": 0.7321428571428571}, {"year": 1998, "income_group": "Lower middle", "mean_ratio": 0.9634146341463414}, {"year": 1998, "income_group": "Upper middle", "mean_ratio": 1.0}, {"year": 1999, "income_group": "High", "mean_ratio": 1.0}, {"year": 1999, "income_group": "Low", "mean_ratio": 0.7407407407407407}, {"year": 1999, "income_group": "Lower middle", "mean_ratio": 0.9634146341463414}, {"year": 1999, "income_group": "Upper middle", "mean_ratio": 1.0}, {"year": 2000, "income_group": "High", "mean_ratio": 1.0}, {"year": 2000, "income_group": "Low", "mean_ratio": 0.7407407407407407}, {"year": 2000, "income_group": "Lower middle", "mean_ratio": 0.9634146341463414}, {"year": 2000, "income_group": "Upper middle", "mean_ratio": 1.0}, {"year": 2001, "income_group": "High", "mean_ratio": 1.0}, {"year": 2001, "income_group": "Low", "mean_ratio": 0.7407407407407407}, {"year": 2001, "income_group": "Lower middle", "mean_ratio": 0.9634146341463414}, {"year": 2001, "income_group": "Upper middle", "mean_ratio": 1.0}, {"year": 2002, "income_group": "High", "mean_ratio": 1.0}, {"year": 2002, "income_group": "Low", "mean_ratio": 0.7407407407407407}, {"year": 2002, "income_group": "Lower middle", "mean_ratio": 0.9642857142857143}, {"year": 2002, "income_group": "Upper middle", "mean_ratio": 1.0}, {"year": 2003, "income_group": "High", "mean_ratio": 1.0}, {"year": 2003, "income_group": "Low", "mean_ratio": 0.7407407407407407}, {"year": 2003, "income_group": "Lower middle", "mean_ratio": 0.9642857142857143}, {"year": 2003, "income_group": "Upper middle", "mean_ratio": 1.0}, {"year": 2004, "income_group": "High", "mean_ratio": 1.0}, {"year": 2004, "income_group": "Low", "mean_ratio": 0.75}, {"year": 2004, "income_group": "Lower middle", "mean_ratio": 0.9642857142857143}, {"year": 2004, "income_group": "Upper middle", "mean_ratio": 1.0}, {"year": 2005, "income_group": "High", "mean_ratio": 1.0}, {"year": 2005, "income_group": "Low", "mean_ratio": 0.75}, {"year": 2005, "income_group": "Lower middle", "mean_ratio": 0.975609756097561}, {"year": 2005, "income_group": "Upper middle", "mean_ratio": 1.0}, {"year": 2006, "income_group": "High", "mean_ratio": 1.0}, {"year": 2006, "income_group": "Low", "mean_ratio": 0.75}, {"year": 2006, "income_group": "Lower middle", "mean_ratio": 0.975609756097561}, {"year": 2006, "income_group": "Upper middle", "mean_ratio": 1.0}, {"year": 2007, "income_group": "High", "mean_ratio": 1.0}, {"year": 2007, "income_group": "Low", "mean_ratio": 0.75}, {"year": 2007, "income_group": "Lower middle", "mean_ratio": 0.975609756097561}, {"year": 2007, "income_group": "Upper middle", "mean_ratio": 1.0}, {"year": 2008, "income_group": "High", "mean_ratio": 1.0}, {"year": 2008, "income_group": "Low", "mean_ratio": 0.7708333333333334}, {"year": 2008, "income_group": "Lower middle", "mean_ratio": 0.975609756097561}, {"year": 2008, "income_group": "Upper middle", "mean_ratio": 1.0}, {"year": 2009, "income_group": "High", "mean_ratio": 1.0}, {"year": 2009, "income_group": "Low", "mean_ratio": 0.78}, {"year": 2009, "income_group": "Lower middle", "mean_ratio": 0.975609756097561}, {"year": 2009, "income_group": "Upper middle", "mean_ratio": 1.0}, {"year": 2010, "income_group": "High", "mean_ratio": 1.0}, {"year": 2010, "income_group": "Low", "mean_ratio": 0.78}, {"year": 2010, "income_group": "Lower middle", "mean_ratio": 0.975609756097561}, {"year": 2010, "income_group": "Upper middle", "mean_ratio": 1.0}, {"year": 2011, "income_group": "High", "mean_ratio": 1.0}, {"year": 2011, "income_group": "Low", "mean_ratio": 0.7916666666666666}, {"year": 2011, "income_group": "Lower middle", "mean_ratio": 0.975609756097561}, {"year": 2011, "income_group": "Upper middle", "mean_ratio": 1.0}, {"year": 2012, "income_group": "High", "mean_ratio": 1.0}, {"year": 2012, "income_group": "Low", "mean_ratio": 0.8076923076923077}, {"year": 2012, "income_group": "Lower middle", "mean_ratio": 0.975609756097561}, {"year": 2012, "income_group": "Upper middle", "mean_ratio": 1.0}, {"year": 2013, "income_group": "High", "mean_ratio": 1.0}, {"year": 2013, "income_group": "Low", "mean_ratio": 0.8076923076923077}, {"year": 2013, "income_group": "Lower middle", "mean_ratio": 0.975609756097561}, {"year": 2013, "income_group": "Upper middle", "mean_ratio": 1.0}, {"year": 2014, "income_group": "High", "mean_ratio": 1.0}, {"year": 2014, "income_group": "Low", "mean_ratio": 0.8333333333333334}, {"year": 2014, "income_group": "Lower middle", "mean_ratio": 0.975609756097561}, {"year": 2014, "income_group": "Upper middle", "mean_ratio": 1.0}, {"year": 2015, "income_group": "High", "mean_ratio": 1.0}, {"year": 2015, "income_group": "Low", "mean_ratio": 0.8461538461538461}, {"year": 2015, "income_group": "Lower middle", "mean_ratio": 0.9761904761904762}, {"year": 2015, "income_group": "Upper middle", "mean_ratio": 1.0}]}, {"name": "data_0", "values": [{"income_group": "High", "mean_ratio": 0.9903846153846154, "year": 1970}, {"income_group": "Low", "mean_ratio": 0.5862068965517241, "year": 1970}, {"income_group": "Lower middle", "mean_ratio": 0.8333333333333334, "year": 1970}, {"income_group": "Upper middle", "mean_ratio": 0.9787234042553191, "year": 1970}, {"income_group": "High", "mean_ratio": 0.9903846153846154, "year": 1971}, {"income_group": "Low", "mean_ratio": 0.5862068965517241, "year": 1971}, {"income_group": "Lower middle", "mean_ratio": 0.8529411764705882, "year": 1971}, {"income_group": "Upper middle", "mean_ratio": 0.9891304347826086, "year": 1971}, {"income_group": "High", "mean_ratio": 0.9903846153846154, "year": 1972}, {"income_group": "Low", "mean_ratio": 0.5862068965517241, "year": 1972}, {"income_group": "Lower middle", "mean_ratio": 0.8529411764705882, "year": 1972}, {"income_group": "Upper middle", "mean_ratio": 0.9891304347826086, "year": 1972}, {"income_group": "High", "mean_ratio": 0.9903846153846154, "year": 1973}, {"income_group": "Low", "mean_ratio": 0.603448275862069, "year": 1973}, {"income_group": "Lower middle", "mean_ratio": 0.8676470588235294, "year": 1973}, {"income_group": "Upper middle", "mean_ratio": 0.9891304347826086, "year": 1973}, {"income_group": "High", "mean_ratio": 0.9903846153846154, "year": 1974}, {"income_group": "Low", "mean_ratio": 0.6071428571428571, "year": 1974}, {"income_group": "Lower middle", "mean_ratio": 0.8676470588235294, "year": 1974}, {"income_group": "Upper middle", "mean_ratio": 0.9891304347826086, "year": 1974}, {"income_group": "High", "mean_ratio": 0.9903846153846154, "year": 1975}, {"income_group": "Low", "mean_ratio": 0.6206896551724138, "year": 1975}, {"income_group": "Lower middle", "mean_ratio": 0.8676470588235294, "year": 1975}, {"income_group": "Upper middle", "mean_ratio": 1.0, "year": 1975}, {"income_group": "High", "mean_ratio": 0.9903846153846154, "year": 1976}, {"income_group": "Low", "mean_ratio": 0.6206896551724138, "year": 1976}, {"income_group": "Lower middle", "mean_ratio": 0.8787878787878788, "year": 1976}, {"income_group": "Upper middle", "mean_ratio": 1.0, "year": 1976}, {"income_group": "High", "mean_ratio": 0.9903846153846154, "year": 1977}, {"income_group": "Low", "mean_ratio": 0.6206896551724138, "year": 1977}, {"income_group": "Lower middle", "mean_ratio": 0.8787878787878788, "year": 1977}, {"income_group": "Upper middle", "mean_ratio": 1.0, "year": 1977}, {"income_group": "High", "mean_ratio": 0.9903846153846154, "year": 1978}, {"income_group": "Low", "mean_ratio": 0.6206896551724138, "year": 1978}, {"income_group": "Lower middle", "mean_ratio": 0.8970588235294118, "year": 1978}, {"income_group": "Upper middle", "mean_ratio": 1.0, "year": 1978}, {"income_group": "High", "mean_ratio": 0.9903846153846154, "year": 1979}, {"income_group": "Low", "mean_ratio": 0.6206896551724138, "year": 1979}, {"income_group": "Lower middle", "mean_ratio": 0.9, "year": 1979}, {"income_group": "Upper middle", "mean_ratio": 1.0, "year": 1979}, {"income_group": "High", "mean_ratio": 1.0, "year": 1980}, {"income_group": "Low", "mean_ratio": 0.6206896551724138, "year": 1980}, {"income_group": "Lower middle", "mean_ratio": 0.9, "year": 1980}, {"income_group": "Upper middle", "mean_ratio": 1.0, "year": 1980}, {"income_group": "High", "mean_ratio": 1.0, "year": 1981}, {"income_group": "Low", "mean_ratio": 0.6333333333333333, "year": 1981}, {"income_group": "Lower middle", "mean_ratio": 0.9, "year": 1981}, {"income_group": "Upper middle", "mean_ratio": 1.0, "year": 1981}, {"income_group": "High", "mean_ratio": 1.0, "year": 1982}, {"income_group": "Low", "mean_ratio": 0.65, "year": 1982}, {"income_group": "Lower middle", "mean_ratio": 0.9, "year": 1982}, {"income_group": "Upper middle", "mean_ratio": 1.0, "year": 1982}, {"income_group": "High", "mean_ratio": 1.0, "year": 1983}, {"income_group": "Low", "mean_ratio": 0.65, "year": 1983}, {"income_group": "Lower middle", "mean_ratio": 0.9, "year": 1983}, {"income_group": "Upper middle", "mean_ratio": 1.0, "year": 1983}, {"income_group": "High", "mean_ratio": 1.0, "year": 1984}, {"income_group": "Low", "mean_ratio": 0.65, "year": 1984}, {"income_group": "Lower middle", "mean_ratio": 0.9142857142857143, "year": 1984}, {"income_group": "Upper middle", "mean_ratio": 1.0, "year": 1984}, {"income_group": "High", "mean_ratio": 1.0, "year": 1985}, {"income_group": "Low", "mean_ratio": 0.65, "year": 1985}, {"income_group": "Lower middle", "mean_ratio": 0.9142857142857143, "year": 1985}, {"income_group": "Upper middle", "mean_ratio": 1.0, "year": 1985}, {"income_group": "High", "mean_ratio": 1.0, "year": 1986}, {"income_group": "Low", "mean_ratio": 0.6612903225806451, "year": 1986}, {"income_group": "Lower middle", "mean_ratio": 0.9142857142857143, "year": 1986}, {"income_group": "Upper middle", "mean_ratio": 1.0, "year": 1986}, {"income_group": "High", "mean_ratio": 1.0, "year": 1987}, {"income_group": "Low", "mean_ratio": 0.671875, "year": 1987}, {"income_group": "Lower middle", "mean_ratio": 0.9166666666666666, "year": 1987}, {"income_group": "Upper middle", "mean_ratio": 1.0, "year": 1987}, {"income_group": "High", "mean_ratio": 1.0, "year": 1988}, {"income_group": "Low", "mean_ratio": 0.671875, "year": 1988}, {"income_group": "Lower middle", "mean_ratio": 0.9285714285714286, "year": 1988}, {"income_group": "Upper middle", "mean_ratio": 1.0, "year": 1988}, {"income_group": "High", "mean_ratio": 1.0, "year": 1989}, {"income_group": "Low", "mean_ratio": 0.6833333333333333, "year": 1989}, {"income_group": "Lower middle", "mean_ratio": 0.9428571428571428, "year": 1989}, {"income_group": "Upper middle", "mean_ratio": 1.0, "year": 1989}, {"income_group": "High", "mean_ratio": 1.0, "year": 1990}, {"income_group": "Low", "mean_ratio": 0.6964285714285714, "year": 1990}, {"income_group": "Lower middle", "mean_ratio": 0.9444444444444444, "year": 1990}, {"income_group": "Upper middle", "mean_ratio": 1.0, "year": 1990}, {"income_group": "High", "mean_ratio": 1.0, "year": 1991}, {"income_group": "Low", "mean_ratio": 0.6964285714285714, "year": 1991}, {"income_group": "Lower middle", "mean_ratio": 0.9459459459459459, "year": 1991}, {"income_group": "Upper middle", "mean_ratio": 1.0, "year": 1991}, {"income_group": "High", "mean_ratio": 1.0, "year": 1992}, {"income_group": "Low", "mean_ratio": 0.6964285714285714, "year": 1992}, {"income_group": "Lower middle", "mean_ratio": 0.9487179487179487, "year": 1992}, {"income_group": "Upper middle", "mean_ratio": 1.0, "year": 1992}, {"income_group": "High", "mean_ratio": 1.0, "year": 1993}, {"income_group": "Low", "mean_ratio": 0.6964285714285714, "year": 1993}, {"income_group": "Lower middle", "mean_ratio": 0.9487179487179487, "year": 1993}, {"income_group": "Upper middle", "mean_ratio": 1.0, "year": 1993}, {"income_group": "High", "mean_ratio": 1.0, "year": 1994}, {"income_group": "Low", "mean_ratio": 0.6964285714285714, "year": 1994}, {"income_group": "Lower middle", "mean_ratio": 0.9487179487179487, "year": 1994}, {"income_group": "Upper middle", "mean_ratio": 1.0, "year": 1994}, {"income_group": "High", "mean_ratio": 1.0, "year": 1995}, {"income_group": "Low", "mean_ratio": 0.6964285714285714, "year": 1995}, {"income_group": "Lower middle", "mean_ratio": 0.9605263157894737, "year": 1995}, {"income_group": "Upper middle", "mean_ratio": 1.0, "year": 1995}, {"income_group": "High", "mean_ratio": 1.0, "year": 1996}, {"income_group": "Low", "mean_ratio": 0.6964285714285714, "year": 1996}, {"income_group": "Lower middle", "mean_ratio": 0.9625, "year": 1996}, {"income_group": "Upper middle", "mean_ratio": 1.0, "year": 1996}, {"income_group": "High", "mean_ratio": 1.0, "year": 1997}, {"income_group": "Low", "mean_ratio": 0.7222222222222222, "year": 1997}, {"income_group": "Lower middle", "mean_ratio": 0.9634146341463414, "year": 1997}, {"income_group": "Upper middle", "mean_ratio": 1.0, "year": 1997}, {"income_group": "High", "mean_ratio": 1.0, "year": 1998}, {"income_group": "Low", "mean_ratio": 0.7321428571428571, "year": 1998}, {"income_group": "Lower middle", "mean_ratio": 0.9634146341463414, "year": 1998}, {"income_group": "Upper middle", "mean_ratio": 1.0, "year": 1998}, {"income_group": "High", "mean_ratio": 1.0, "year": 1999}, {"income_group": "Low", "mean_ratio": 0.7407407407407407, "year": 1999}, {"income_group": "Lower middle", "mean_ratio": 0.9634146341463414, "year": 1999}, {"income_group": "Upper middle", "mean_ratio": 1.0, "year": 1999}, {"income_group": "High", "mean_ratio": 1.0, "year": 2000}, {"income_group": "Low", "mean_ratio": 0.7407407407407407, "year": 2000}, {"income_group": "Lower middle", "mean_ratio": 0.9634146341463414, "year": 2000}, {"income_group": "Upper middle", "mean_ratio": 1.0, "year": 2000}, {"income_group": "High", "mean_ratio": 1.0, "year": 2001}, {"income_group": "Low", "mean_ratio": 0.7407407407407407, "year": 2001}, {"income_group": "Lower middle", "mean_ratio": 0.9634146341463414, "year": 2001}, {"income_group": "Upper middle", "mean_ratio": 1.0, "year": 2001}, {"income_group": "High", "mean_ratio": 1.0, "year": 2002}, {"income_group": "Low", "mean_ratio": 0.7407407407407407, "year": 2002}, {"income_group": "Lower middle", "mean_ratio": 0.9642857142857143, "year": 2002}, {"income_group": "Upper middle", "mean_ratio": 1.0, "year": 2002}, {"income_group": "High", "mean_ratio": 1.0, "year": 2003}, {"income_group": "Low", "mean_ratio": 0.7407407407407407, "year": 2003}, {"income_group": "Lower middle", "mean_ratio": 0.9642857142857143, "year": 2003}, {"income_group": "Upper middle", "mean_ratio": 1.0, "year": 2003}, {"income_group": "High", "mean_ratio": 1.0, "year": 2004}, {"income_group": "Low", "mean_ratio": 0.75, "year": 2004}, {"income_group": "Lower middle", "mean_ratio": 0.9642857142857143, "year": 2004}, {"income_group": "Upper middle", "mean_ratio": 1.0, "year": 2004}, {"income_group": "High", "mean_ratio": 1.0, "year": 2005}, {"income_group": "Low", "mean_ratio": 0.75, "year": 2005}, {"income_group": "Lower middle", "mean_ratio": 0.975609756097561, "year": 2005}, {"income_group": "Upper middle", "mean_ratio": 1.0, "year": 2005}, {"income_group": "High", "mean_ratio": 1.0, "year": 2006}, {"income_group": "Low", "mean_ratio": 0.75, "year": 2006}, {"income_group": "Lower middle", "mean_ratio": 0.975609756097561, "year": 2006}, {"income_group": "Upper middle", "mean_ratio": 1.0, "year": 2006}, {"income_group": "High", "mean_ratio": 1.0, "year": 2007}, {"income_group": "Low", "mean_ratio": 0.75, "year": 2007}, {"income_group": "Lower middle", "mean_ratio": 0.975609756097561, "year": 2007}, {"income_group": "Upper middle", "mean_ratio": 1.0, "year": 2007}, {"income_group": "High", "mean_ratio": 1.0, "year": 2008}, {"income_group": "Low", "mean_ratio": 0.7708333333333334, "year": 2008}, {"income_group": "Lower middle", "mean_ratio": 0.975609756097561, "year": 2008}, {"income_group": "Upper middle", "mean_ratio": 1.0, "year": 2008}, {"income_group": "High", "mean_ratio": 1.0, "year": 2009}, {"income_group": "Low", "mean_ratio": 0.78, "year": 2009}, {"income_group": "Lower middle", "mean_ratio": 0.975609756097561, "year": 2009}, {"income_group": "Upper middle", "mean_ratio": 1.0, "year": 2009}, {"income_group": "High", "mean_ratio": 1.0, "year": 2010}, {"income_group": "Low", "mean_ratio": 0.78, "year": 2010}, {"income_group": "Lower middle", "mean_ratio": 0.975609756097561, "year": 2010}, {"income_group": "Upper middle", "mean_ratio": 1.0, "year": 2010}, {"income_group": "High", "mean_ratio": 1.0, "year": 2011}, {"income_group": "Low", "mean_ratio": 0.7916666666666666, "year": 2011}, {"income_group": "Lower middle", "mean_ratio": 0.975609756097561, "year": 2011}, {"income_group": "Upper middle", "mean_ratio": 1.0, "year": 2011}, {"income_group": "High", "mean_ratio": 1.0, "year": 2012}, {"income_group": "Low", "mean_ratio": 0.8076923076923077, "year": 2012}, {"income_group": "Lower middle", "mean_ratio": 0.975609756097561, "year": 2012}, {"income_group": "Upper middle", "mean_ratio": 1.0, "year": 2012}, {"income_group": "High", "mean_ratio": 1.0, "year": 2013}, {"income_group": "Low", "mean_ratio": 0.8076923076923077, "year": 2013}, {"income_group": "Lower middle", "mean_ratio": 0.975609756097561, "year": 2013}, {"income_group": "Upper middle", "mean_ratio": 1.0, "year": 2013}, {"income_group": "High", "mean_ratio": 1.0, "year": 2014}, {"income_group": "Low", "mean_ratio": 0.8333333333333334, "year": 2014}, {"income_group": "Lower middle", "mean_ratio": 0.975609756097561, "year": 2014}, {"income_group": "Upper middle", "mean_ratio": 1.0, "year": 2014}, {"income_group": "High", "mean_ratio": 1.0, "year": 2015}, {"income_group": "Low", "mean_ratio": 0.8461538461538461, "year": 2015}, {"income_group": "Lower middle", "mean_ratio": 0.9761904761904762, "year": 2015}, {"income_group": "Upper middle", "mean_ratio": 1.0, "year": 2015}]}, {"name": "source_0_color_domain_income_group_0", "values": [{"income_group": "High"}, {"income_group": "Low"}, {"income_group": "Lower middle"}, {"income_group": "Upper middle"}]}, {"name": "data_0_color_domain_income_group_1", "values": [{"income_group": "High"}, {"income_group": "Low"}, {"income_group": "Lower middle"}, {"income_group": "Upper middle"}]}], "marks": [{"type": "group", "name": "layer_0_pathgroup", "from": {"facet": {"data": "source_0", "name": "faceted_path_layer_0_main", "groupby": ["income_group"]}}, "encode": {"update": {"height": {"field": {"signal": null, "datum": null, "group": "height", "parent": null}}, "width": {"field": {"signal": null, "datum": null, "group": "width", "parent": null}}}}, "marks": [{"type": "line", "name": "layer_0_marks", "from": {"data": "faceted_path_layer_0_main"}, "sort": {"field": "x"}, "encode": {"update": {"stroke": {"field": "income_group", "scale": "color"}, "x": {"field": "year", "scale": "x"}, "y": {"field": "mean_ratio", "scale": "y"}, "defined": {"signal": "isValid(datum[\"year\"]) && isFinite(+datum[\"year\"]) && isValid(datum[\"mean_ratio\"]) && isFinite(+datum[\"mean_ratio\"])"}}}, "style": ["line"]}]}, {"type": "symbol", "name": "layer_1_marks", "from": {"data": "data_0"}, "encode": {"update": {"x": {"field": "year", "scale": "x"}, "y": {"field": "mean_ratio", "scale": "y"}, "shape": {"value": "square"}, "fill": {"field": "income_group", "scale": "color"}, "opacity": {"value": 0.7}}}, "style": ["square"]}], "scales": [{"name": "x", "type": "linear", "domain": {"fields": [{"data": "source_0", "field": "year"}, {"data": "data_0", "field": "year"}]}, "range": [0, {"signal": "width"}], "nice": true, "zero": false}, {"name": "y", "type": "linear", "domain": {"fields": [{"data": "source_0", "field": "mean_ratio"}, {"data": "data_0", "field": "mean_ratio"}]}, "range": [{"signal": "height"}, 0], "zero": true, "nice": true}, {"name": "color", "type": "ordinal", "domain": {"fields": [{"data": "source_0_color_domain_income_group_0", "field": "income_group"}, {"data": "data_0_color_domain_income_group_1", "field": "income_group"}], "sort": true}, "range": "category"}], "axes": [{"scale": "x", "aria": false, "zindex": 0, "grid": true, "labels": false, "ticks": false, "minExtent": 0, "tickCount": {"signal": "ceil(width/40)"}, "gridScale": "y", "maxExtent": 0, "domain": false, "orient": "bottom"}, {"scale": "y", "tickCount": {"signal": "ceil(height/40)"}, "orient": "left", "aria": false, "zindex": 0, "maxExtent": 0, "labels": false, "gridScale": "x", "grid": true, "ticks": false, "domain": false, "minExtent": 0}, {"scale": "x", "labelOverlap": true, "orient": "bottom", "labelFlush": true, "title": "year", "tickCount": {"signal": "ceil(width/40)"}, "grid": false, "zindex": 0}, {"scale": "y", "orient": "left", "labelOverlap": true, "tickCount": {"signal": "ceil(height/40)"}, "zindex": 0, "grid": false, "title": "mean_ratio"}], "title": {"text": "Women vs Men years in school (mean ratio category) over time", "frame": "group"}, "height": 300, "legends": [{"stroke": "color", "symbolType": "stroke", "title": "income_group", "fill": "color", "encode": {"symbols": {"update": {"opacity": {"value": 0.7}}}}}], "width": 400, "config": {"encoding": {"x": {"scale": {"zero": false}}}, "axis": {"titleFontSize": 15, "labelFontSize": 12}, "legend": {"symbolSize": 14, "titleFontSize": 14, "labelFontSize": 14}}, "padding": 5, "style": "cell", "background": "white"}, {"mode": "vega"});
+</script>
 </div>
 </div>
 </div>
@@ -8132,11 +8205,42 @@ R
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">R</span><span class="w"> </span><span class="o">-</span><span class="n">w</span><span class="w"> </span><span class="m">550</span><span class="w"> </span><span class="o">-</span><span class="n">h</span><span class="w"> </span><span class="m">375</span>
 <span class="c1"># YOUR R ANSWER GOES HERE</span>
+
+<span class="c1"># Adding newe column 'ratio' = years in school woman | years in school men (1=many years for both, 0.5=half as many for women compare to men)</span>
+<span class="n">gm</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">gm</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="nf">mutate</span><span class="p">(</span>
+<span class="w">    </span><span class="n">ratio_raw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">years_in_school_women</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">years_in_school_men</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ratio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">case_when</span><span class="p">(</span>
+<span class="w">      </span><span class="nf">between</span><span class="p">(</span><span class="n">ratio_raw</span><span class="p">,</span><span class="w"> </span><span class="m">0.6</span><span class="p">,</span><span class="w"> </span><span class="m">1.0</span><span class="p">)</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="m">1.0</span><span class="p">,</span><span class="w">   </span><span class="c1"># similar</span>
+<span class="w">      </span><span class="nf">between</span><span class="p">(</span><span class="n">ratio_raw</span><span class="p">,</span><span class="w"> </span><span class="m">0.4</span><span class="p">,</span><span class="w"> </span><span class="m">0.5</span><span class="p">)</span><span class="w">  </span><span class="o">~</span><span class="w"> </span><span class="m">0.5</span><span class="p">,</span><span class="w">   </span><span class="c1"># about half (same as your Python)</span>
+<span class="w">      </span><span class="kc">TRUE</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="kc">NA_real_</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="w">  </span><span class="p">)</span>
+
+<span class="c1"># Filter/create new data frame to only contain value from 1970-2015 in 'year'</span>
+<span class="n">gm_filtered2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">gm</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="nf">filter</span><span class="p">(</span><span class="n">year</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">1970</span><span class="p">,</span><span class="w"> </span><span class="n">year</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="m">2015</span><span class="p">)</span>
+
+<span class="c1"># plot ratio of women years in school and men years in school (y) over year (x), Group by income, plot mean for each group</span>
+
+<span class="n">gm_yearly</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">gm_filtered2</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">  </span><span class="nf">group_by</span><span class="p">(</span><span class="n">year</span><span class="p">,</span><span class="w"> </span><span class="n">income_group</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">  </span><span class="nf">summarise</span><span class="p">(</span><span class="n">mean_ratio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">ratio</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">),</span><span class="w"> </span><span class="n">.groups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"drop"</span><span class="p">)</span>
+
+
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">gm_yearly</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">year</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mean_ratio</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">income_group</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_line</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_point</span><span class="p">(</span><span class="n">shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">15</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">labs</span><span class="p">(</span><span class="w">       </span><span class="c1"># Layering with sqaure mark for every data point in the line plot (one per yearly mean in income group)</span>
+<span class="w">    </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Women vs Men years in school (mean ratio category) over time"</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Year"</span><span class="p">,</span>
+<span class="w">    </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Mean ratio (women/men category)"</span><span class="p">,</span>
+<span class="w">    </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Income group"</span>
+<span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">theme_minimal</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -8180,7 +8284,7 @@ The default in the link above is a 95% bootstrapped confidence interval.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [30]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># YOUR PYTHON ANSWER GOES HERE</span>
@@ -8218,7 +8322,7 @@ just as in the Python plot above.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [31]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">R</span><span class="w"> </span><span class="o">-</span><span class="n">w</span><span class="w"> </span><span class="m">550</span><span class="w"> </span><span class="o">-</span><span class="n">h</span><span class="w"> </span><span class="m">375</span>
@@ -8299,7 +8403,7 @@ Python
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [32]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># YOUR PYTHON ANSWER GOES HERE</span>
@@ -8346,7 +8450,7 @@ R
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [33]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">R</span><span class="w"> </span><span class="o">-</span><span class="n">w</span><span class="w"> </span><span class="m">800</span><span class="w"> </span><span class="o">-</span><span class="n">h</span><span class="w"> </span><span class="m">450</span>
@@ -8420,7 +8524,7 @@ Python
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [34]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># YOUR PYTHON ANSWER GOES HERE</span>
@@ -8457,7 +8561,7 @@ R
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [35]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">R</span><span class="w"> </span><span class="o">-</span><span class="n">w</span><span class="w"> </span><span class="m">500</span><span class="w"> </span><span class="o">-</span><span class="n">h</span><span class="w"> </span><span class="m">800</span>
@@ -8505,7 +8609,7 @@ Python
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [36]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># YOUR PYTHON ANSWER GOES HERE</span>
@@ -8540,7 +8644,7 @@ R
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [37]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">R</span><span class="w"> </span><span class="o">-</span><span class="n">w</span><span class="w"> </span><span class="m">550</span><span class="w"> </span><span class="o">-</span><span class="n">h</span><span class="w"> </span><span class="m">375</span>
@@ -8599,7 +8703,7 @@ R
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [38]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># YOUR PYTHON ANSWER GOES HERE</span>
@@ -8633,7 +8737,7 @@ R
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [39]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">R</span><span class="w"> </span><span class="o">-</span><span class="n">w</span><span class="w"> </span><span class="m">1000</span><span class="w"> </span><span class="o">-</span><span class="n">h</span><span class="w"> </span><span class="m">250</span>
@@ -8696,7 +8800,7 @@ Python
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [40]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># YOUR PYTHON ANSWER GOES HERE</span>
@@ -8735,7 +8839,7 @@ R
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [41]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">R</span><span class="w"> </span><span class="o">-</span><span class="n">w</span><span class="w"> </span><span class="m">550</span><span class="w"> </span><span class="o">-</span><span class="n">h</span><span class="w"> </span><span class="m">375</span>
@@ -8781,7 +8885,7 @@ R
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [42]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">canvasutils.submit</span><span class="w"> </span><span class="kn">import</span> <span class="n">submit</span><span class="p">,</span> <span class="n">convert_notebook</span>
